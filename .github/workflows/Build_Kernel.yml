@@ -201,6 +201,7 @@ jobs:
           mkdir kernel_workspace && cd kernel_workspace
           repo init -u https://github.com/imlaoyou2333/oplus_fake_kernel_manifest.git -b refs/heads/oneplus/${{ env.CPU }} -m ${{ github.event.inputs.FILE }}.xml --depth=1
           repo sync -c -j$(nproc --all) --no-tags --no-clone-bundle --force-sync
+          repo status
 
       - name: Download kernel-manifest
         id: fetch_manifest
